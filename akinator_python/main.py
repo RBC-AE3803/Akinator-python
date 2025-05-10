@@ -63,7 +63,7 @@ class Akinator():
             self.json["answer"] = 4
         else:
             raise AkinatorError("the answer must be 'y' / 'n' / 'idk' / 'p' / 'pn'")
-        try
+        try:
             progression = self.scraper.post(f"{self.ENDPOINT}answer", json=self.json)
             progression = progression.json()
             if progression["completion"] == "KO":
